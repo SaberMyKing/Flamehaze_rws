@@ -1,0 +1,78 @@
+.nav-menu {
+    position: relative;
+    height: 42px;
+    offset: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-menu-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; height: 100%;
+    background-color: hsla(0,0%,100%,.4);
+}
+
+.nav-menu-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 1000px;
+    height: 100%;
+    background-color: green;
+}
+
+.nav-left-buttons {
+    float: left;
+}
+
+.nav-right-buttons {
+    float: right;
+}
+
+.nav-buttons-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    float: left;
+    position: relative;
+    text-align: center;
+    line-height: 42px;
+    height: 100%;
+    background-color: hsla(0,0%,100%,0);
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    list-style: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+    "WenQuanYi Micro Hei", sans-serif;
+}
+
+.nav-item-text {
+    color: #222;
+    height: 100%;
+    display: block;
+    padding: 0 11px;
+    text-decoration: none;
+}
+
+.nav-user-face {
+    height: 42px;
+    border-radius: 50%
+}
+
+.nav-video {
+    position: absolute;
+
+}

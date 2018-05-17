@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag 'application'%>
+<%= javascript_include_tag 'application'%>
+
+<title>火焰之雾</title>
+
+<body style="margin: 0;">
+
+<div class="nav-menu">
+  <div class="nav-menu-bg">
+
+  </div>
+
+  <div class="nav-menu-mask">
+
+  </div>
+
+  <div class="nav-menu-wrapper">
+    <div class="nav-left-buttons">
+      <ul class="nav-buttons-ul">
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">茵蒂克丝</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">番剧</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">轻小说</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">漫画</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">游戏</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right-buttons">
+      <ul class="nav-buttons-ul">
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">
+          <%= image_tag 'myface.jpg', alt: 'myface', class: 'nav-user-face' %>
+        </a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">@我的消息</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">关注</a></li>
+        <li class="nav-item"><a href="/users/create" target="_blank" class="nav-item-text">收藏夹</a></li>
+      </ul>
+    </div>
+
+    <div class="create-new-button">
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<button class="test-button">Click</button>
+
+</body>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("button.test-button").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "/api/articles/create",
+                data: { apple: 10000 },
+                success: function(data){
+                    console.log(data.toString());
+                },
+                error: function(){
+                    console.log("error");
+                }
+            });
+        });
+    });
+
+
+</script>
+
