@@ -14,11 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require jquery
-
-// Baidu UMEditor
-//= require third-party/template.min
-//= require umeditor.config
-//= require editor_api
-//= require lang/zh-cn/zh-cn
-
