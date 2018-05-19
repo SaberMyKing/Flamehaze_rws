@@ -43,7 +43,7 @@
     height: 25px;
     background: red;
     vertical-align: bottom;
-    background: url(../images/ok.gif) no-repeat 1000px 1000px;
+    background: url(/assets/themes/ok.gif) no-repeat 1000px 1000px;
 }
 
 .edui-combobox-menu .edui-combobox-checked .edui-combobox-icon {
