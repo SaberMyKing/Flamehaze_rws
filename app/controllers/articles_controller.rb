@@ -4,4 +4,8 @@ class ArticlesController < ActionController::Base
 
   end
 
+  def show
+    @article = Article.find 10
+  end
+
 end

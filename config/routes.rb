@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   get 'users/create'
   get 'articles/create'
+  get 'articles/show'
   get 'article_comments/create'
 
 end

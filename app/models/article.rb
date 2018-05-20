@@ -15,9 +15,11 @@ class Article < ActiveRecord::Base
         params['enabled'] = true
         params['read_times'] = 0
         article = new(params.slice *(column_names - %w[id created_at updated_at]))
-        article.generate_content_htmlfile
+        content_htmltags = article.content
         article.content_remove_htmltags
         article.save!
+        article.content = content_htmltags
+        article.generate_content_htmlfile
         response['id'] = article.id
       end
     end
@@ -41,13 +43,23 @@ class Article < ActiveRecord::Base
 
   # 将content原封不动的提出，并转换成一个html文件保存在指定路径
   def generate_content_htmlfile
+    file = File.new(htmlfile_name, 'w')
+    file.puts(content)
+  end
 
+  def htmlfile_name
+    "#{id}_#{title}.html"
   end
 
   # 移除content中的html标签，并覆盖原有content
   def content_remove_htmltags
-
+    self.content = method_name.strip_tags(content).squish
   end
 
+  def method_name
+    @helper ||= Class.new do
+      include ActionView::Helpers::SanitizeHelper
+    end.new
+  end
 
 end
