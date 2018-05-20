@@ -1,6 +1,6 @@
 module V1
   module Articles
-    class CreateAction < Grape::API
+    class CreateNewAction < Grape::API
       resource 'articles' do
         desc '创建新文章' do
           detail %(
@@ -16,10 +16,11 @@ module V1
 
         params do
           requires :creator_id, type: Integer, allow_blank: false, desc: '创建者ID'
+          requires :title, type: String, allow_blank: false, desc: '文章标题'
           requires :content, type: String, allow_blank: false, desc: '文章内容'
         end
 
-        post 'create' do
+        post 'create_new' do
           Article.create_new params
         end
       end

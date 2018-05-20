@@ -1,6 +1,6 @@
 module V1
   module Users
-    class CreateAction < Grape::API
+    class CreateNewAction < Grape::API
       resource 'users' do
         desc '创建新用户' do
           detail %(
@@ -19,7 +19,7 @@ module V1
           requires :level, type: Integer, allow_blank: true, desc: '用户等级'
         end
 
-        post 'create' do
+        post 'create_new' do
           User.create_new params
         end
       end
